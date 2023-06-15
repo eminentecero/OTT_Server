@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>Aloys</title>
+
+	<!-- Meta Tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="author" content="Webestica.com">
+	<meta name="description" content="Eduport- LMS, Education and Course Theme">
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="../images/icon.gif">
+
+
+	<!-- Google Font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap">
+
+	<!-- Plugins CSS -->
+	<link rel="stylesheet" type="text/css" href="../../assets/vendor/font-awesome/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="../../assets/vendor/bootstrap-icons/bootstrap-icons.css">
+	<link rel="stylesheet" type="text/css" href="../../assets/vendor/choices/css/choices.min.css">
+	<link rel="stylesheet" type="text/css" href="../../assets/vendor/aos/aos.css">
+	<link rel="stylesheet" type="text/css" href="../../assets/vendor/glightbox/css/glightbox.css">
+	<link rel="stylesheet" type="text/css" href="../../assets/vendor/quill/css/quill.snow.css">
+	<link rel="stylesheet" type="text/css" href="../../assets/vendor/stepper/css/bs-stepper.min.css">
+
+	<!-- Theme CSS -->
+	<link rel="stylesheet" type="text/css" href= "../../css/style.css" />
+
+</head>
+
+<body>
+
+<!-- Header START -->
+<%- include('./navbar') %>
+<!-- Header END -->
+
+<!-- **************** MAIN CONTENT START **************** -->
+<main>
+	
+<!-- =======================
+Page Banner START -->
+<section class="py-0 bg-blue h-100px align-items-center d-flex h-200px rounded-0" style="background:url(../images/pattern/04.png) no-repeat center center; background-size:cover;">
+	<!-- Main banner background image -->
+	<div class="container">
+		<div class="row">
+			<div class="col-12 text-center">
+				<!-- Title -->
+				<h1 class="text-white">Submit a new Course</h1>
+				<p class="text-white mb-0">Read our <a href="#" class="text-white"><u>"Before you create a course"</u></a> article before submitting!</p>	
+			</div>
+		</div>
+	</div>
+</section>
+<!-- =======================
+Page Banner END -->
+
+<!-- =======================
+Steps START -->
+<section>
+	<div class="container">
+		<!-- Card body START -->
+		<div class="card-body">
+			<!-- Step content START -->
+			<div class="bs-stepper-content">
+				<form name='upload' method='post' action='/courses-create/detail'>
+					<!-- Step 1 content START -->
+					<div class="content">
+						<!-- Title -->
+						<h4>Course details</h4>
+
+						<hr> <!-- Divider -->
+
+						<!-- Basic information START -->
+						<div class="row g-4">
+							<!-- Course title -->
+							<input name = "tCode" class="form-control" value="<%=currentUser[0].tCode %>" hidden>
+
+							<div class="col-12">
+								<label class="form-label">강의명</label>
+								<input class="form-control" name="lName" type="text" placeholder="Enter course title" required>
+							</div>
+
+							<!-- Course category -->
+							<div class="col-md-4">
+								<label class="form-label">과목명</label>
+								<select name = "lSubject" class="form-select js-choice border-0 z-index-9 bg-transparent" aria-label=".form-select-sm" data-search-enabled="true" required>
+									<option value="">Select Subject Category</option>
+									<option value="01">국어</option>
+									<option value="02">수학</option>
+									<option value="03">영어</option>
+									<option value="04">사회</option>
+									<option value="05">과학</option>
+									<option value="06">도덕</option>
+								</select>
+							</div>
+
+							<!-- Course level -->
+							<div class="col-md-4">
+								<label class="form-label">수강 학년</label>
+								<select name = "lGrade" class="form-select js-choice border-0 z-index-9 bg-transparent" aria-label=".form-select-sm" data-search-enabled="false" data-remove-item-button="true" required>
+									<option value="">수강할 학년을 선택해주세요</option>
+									<option value="1">1학년</option>
+									<option value="2">2학년</option>
+									<option value="3">3학년</option>
+									<option value="4">4학년</option>
+									<option value="5">5학년</option>
+									<option value="6">6학년</option>
+								</select>
+							</div>
+
+							<!-- Language -->
+							<div class="col-md-4">
+								<label class="form-label">수강 반</label>
+								<select name = "lClass" class="form-select js-choice border-0 z-index-9 bg-transparent" aria-label=".form-select-sm" data-max-item-count="3" data-remove-item-button="true" required>
+									<option value="">수강할 반을 선택해주세요</option>
+									<option value="01">1반</option>
+									<option value="02">2반</option>
+									<option value="03">3반</option>
+									<option value="04">4반</option>
+									<option value="05">5반</option>
+									<option value="06">6반</option>
+									<option value="07">7반</option>
+									<option value="08">8반</option>
+									<option value="09">9반</option>
+									<option value="10">10반</option>
+								</select>
+							</div>
+
+							<!-- Course time -->
+							<div class="col-md-5">
+								<label class="form-label">수강 날짜</label>
+								<input name = "lDate" class="form-control" type="date" placeholder="Enter course time" required>
+							</div>
+							<div class="col-md-2">
+
+							</div>
+						
+							<!-- Total lecture-->
+							<div class="col-md-5">
+								<label class="form-label">과목 시간</label>
+								<select name = "lHour" class="form-select js-choice border-0 z-index-9 bg-transparent" aria-label=".form-select-sm" data-search-enabled="false" data-remove-item-button="true">
+									<option value="">교시를 선택해주세요</option>
+									<option value="01">1교시(09:00-10:00)</option>
+									<option value="02">2교시(10:00-11:00)</option>
+									<option value="03">3교시(11:00-12:00)</option>
+									<option value="04">4교시(12:00-13:00)</option>
+									<option value="05">5교시(13:00-14:00)</option>
+									<option value="06">6교시(14:00-15:00)</option>
+									<option value="07">7교시(15:00-16:00)</option>
+								</select>
+							</div>
+							
+
+							<!-- Course description -->
+							<div class="col-12">
+								<label class="form-label">강의 내용</label>
+								<!-- Editor toolbar -->
+								<div class="bg-light border border-bottom-0 rounded-top py-3" id="quilltoolbar">
+									<span class="ql-formats">
+										<select class="ql-size"></select>
+									</span>
+									<span class="ql-formats">
+										<button class="ql-bold"></button>
+										<button class="ql-italic"></button>
+										<button class="ql-underline"></button>
+										<button class="ql-strike"></button>
+									</span>
+									<span class="ql-formats">
+										<select class="ql-color"></select>
+										<select class="ql-background"></select>
+									</span>
+									<span class="ql-formats">
+										<button class="ql-code-block"></button>
+									</span>
+									<span class="ql-formats">
+										<button class="ql-list" value="ordered"></button>
+										<button class="ql-list" value="bullet"></button>
+										<button class="ql-indent" value="-1"></button>
+										<button class="ql-indent" value="+1"></button>
+									</span>
+									<span class="ql-formats">
+										<button class="ql-link"></button>
+										<button class="ql-image"></button>
+									</span>
+									<span class="ql-formats">
+										<button class="ql-clean"></button>
+									</span>
+								</div>
+
+								<!-- Main toolbar -->
+								<textarea name="lContent" class="bg-body border rounded-bottom h-400px col-12 overflow-hidden" id="quilleditor">
+									
+								</textarea>
+							</div>	
+
+						</div>
+						<!-- Basic information START -->
+						
+						<div class="d-flex justify-content-between mt-3">
+							<button type="submit" value = "upload" class="btn btn-success mb-2 mb-sm-0">다음 단계</button>
+						</div>
+							
+					<!-- Step 1 content END -->
+					
+				</form>
+			</div>
+		</div>
+		<!-- Card body END -->
+</section>
+<!-- =======================
+Steps END -->
+
+</main>
+<!-- **************** MAIN CONTENT END **************** -->
+
+<!-- Footer START -->
+<%- include('./footer-lite') %>
+<!-- Footer END -->
+
+<!-- Popup modal for add lecture START -->
+<div class="modal fade" id="addLecture" tabindex="-1" aria-labelledby="addLectureLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-dark">
+        <h5 class="modal-title text-white" id="addLectureLabel">Add Lecture</h5>
+        <button type="button" class="btn btn-sm btn-light mb-0" data-bs-dismiss="modal" aria-label="Close"><i class="bi bi-x-lg"></i></button>
+      </div>
+      <div class="modal-body">
+        <form class="row text-start g-3">
+					<!-- Course name -->
+					<div class="col-12">
+						<label class="form-label">Course name <span class="text-danger">*</span></label>
+						<input type="text" class="form-control" placeholder="Enter course name">
+					</div>
+				</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger-soft my-0" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success my-0">Save Lecture</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Popup modal for add lecture END -->
+
+<!-- Popup modal for add topic START -->
+<div class="modal fade" id="addTopic" tabindex="-1" aria-labelledby="addTopicLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-dark">
+        <h5 class="modal-title text-white" id="addTopicLabel">Add topic</h5>
+        <button type="button" class="btn btn-sm btn-light mb-0" data-bs-dismiss="modal" aria-label="Close"><i class="bi bi-x-lg"></i></button>
+      </div>
+      <div class="modal-body">
+        <form class="row text-start g-3">
+					<!-- Topic name -->
+					<div class="col-md-6">
+						<label class="form-label">Topic name</label>
+						<input class="form-control" type="text" placeholder="Enter topic name">
+					</div>
+					<!-- Video link -->
+					<div class="col-md-6">
+						<label class="form-label">Video link</label>
+						<input class="form-control" type="text" placeholder="Enter Video link">
+					</div>
+					<!-- Description -->
+					<div class="col-12 mt-3">
+						<label class="form-label">Course description</label>
+						<textarea class="form-control" rows="4" placeholder="" spellcheck="false"></textarea>
+					</div>
+					<!-- Buttons -->
+					<div class="col-6 mt-3">
+						<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+							<!-- Free button -->
+							<input type="radio" class="btn-check" name="options" id="option1" checked="">
+							<label class="btn btn-sm btn-light btn-primary-soft-check border-0 m-0" for="option1">Free</label>
+							<!-- Premium button -->
+							<input type="radio" class="btn-check" name="options" id="option2">
+							<label class="btn btn-sm btn-light btn-primary-soft-check border-0 m-0" for="option2">Premium</label>
+						</div>
+					</div>
+				</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger-soft my-0" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success my-0">Save topic</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Popup modal for add topic END -->
+
+<!-- Popup modal for add faq START -->
+<div class="modal fade" id="addQuestion" tabindex="-1" aria-labelledby="addQuestionLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-dark">
+        <h5 class="modal-title text-white" id="addQuestionLabel">Add FAQ</h5>
+        <button type="button" class="btn btn-sm btn-light mb-0" data-bs-dismiss="modal" aria-label="Close"><i class="bi bi-x-lg"></i></button>
+      </div>
+      <div class="modal-body">
+        <form class="row text-start g-3">
+					<!-- Question -->
+					<div class="col-12">
+						<label class="form-label">Question</label>
+						<input class="form-control" type="text" placeholder="Write a question">
+					</div>
+					<!-- Answer -->
+					<div class="col-12 mt-3">
+						<label class="form-label">Answer</label>
+						<textarea class="form-control" rows="4" placeholder="Write a answer" spellcheck="false"></textarea>
+					</div>
+				</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger-soft my-0" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success my-0">Save topic</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Popup modal for add faq END -->
+
+<!-- Back to top -->
+<div class="back-top"><i class="bi bi-arrow-up-short position-absolute top-50 start-50 translate-middle"></i></div>
+
+<!-- Bootstrap JS -->
+<script src="../../vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Vendors -->
+<script src="../../vendor/choices/js/choices.min.js"></script>
+<script src="../../vendor/aos/aos.js"></script>
+<script src="../../vendor/glightbox/js/glightbox.js"></script>
+<script src="../../vendor/quill/js/quill.min.js"></script>
+
+<script src="../../vendor/stepper/js/bs-stepper.min.js"></script>
+
+<!-- Template Functions -->
+<script src="../../assets/js/functions.js"></script>
+
+</body>
+</html>

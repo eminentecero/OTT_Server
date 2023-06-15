@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>Aloys</title>
+
+	<!-- Meta Tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="author" content="Webestica.com">
+	<meta name="description" content="Eduport- LMS, Education and Course Theme">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="../images/icon.gif">
+
+	<!-- Google Font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap">
+
+	<!-- Plugins CSS -->
+	<link rel="stylesheet" type="text/css" href="../vendor/font-awesome/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="../vendor/bootstrap-icons/bootstrap-icons.css">
+	<link rel="stylesheet" type="text/css" href="../vendor/choices/css/choices.min.css">
+	<link rel="stylesheet" type="text/css" href="../vendor/aos/aos.css">
+
+	<!-- Theme CSS -->
+	<link id="style-switch" rel="stylesheet" type="text/css" href="../css/style.css">
+
+</head>
+
+<body>
+
+<!-- Header START -->
+<%- include('./navbar') %>
+<!-- Header END -->
+
+<!-- **************** MAIN CONTENT START **************** -->
+<main>
+	
+<!-- =======================
+Main Banner START -->
+<section class="pt-0">
+	<!-- Main banner background image -->
+	<div class="container-fluid px-0">
+		<div class="bg-blue h-100px h-md-200px rounded-0" style="background:url(assets/images/pattern/04.png) no-repeat center center; background-size:cover;">
+		</div>
+	</div>
+	<div class="container mt-n4">
+		<div class="row">
+			<div class="col-12">
+				<!-- Profile banner START -->
+				<%- include('./navbar-mypage-profile') %>
+				<!-- Profile banner END -->
+
+				<!-- Advanced filter responsive toggler START -->
+				<!-- Divider -->
+				<hr class="d-xl-none">
+				<div class="col-12 col-xl-3 d-flex justify-content-between align-items-center">
+					<a class="h6 mb-0 fw-bold d-xl-none" href="#">Menu</a>
+					<button class="btn btn-primary d-xl-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+						<i class="fas fa-sliders-h"></i>
+					</button>
+				</div>
+				<!-- Advanced filter responsive toggler END -->
+			</div>
+		</div>
+	</div>
+</section>
+<!-- =======================
+Main Banner END -->
+
+<!-- =======================
+Inner part START -->
+<section class="pt-0">
+	<div class="container">
+		<div class="row">
+
+			<%- include('./navbar-mypage') %>
+
+			<!-- Main content START -->
+			<div class="col-xl-9">
+				<!-- Card START -->
+				<div class="card border bg-transparent rounded-3">
+					<!-- Card header START -->
+					<div class="card-header bg-transparent border-bottom">
+						<h3 class="mb-0">My Students List</h3>
+					</div>
+					<!-- Card header END -->
+
+					<!-- Card body START -->
+					<div class="card-body">
+						<!-- Student list table START -->
+						<div class="table-responsive border-0">
+							<table class="table table-dark-gray align-middle p-4 mb-0 table-hover">
+								<!-- Table head -->
+								<thead>
+									<tr>
+										<th scope="col" class="border-0 rounded-start">학번</th>
+										<th scope="col" class="border-0 rounded-start">이름</th>
+										<th scope="col" class="border-0">진행도</th>
+										<th scope="col" class="border-0">휴대폰 번호</th>
+										<th scope="col" class="border-0 rounded-end">수정</th>
+									</tr>
+								</thead>
+
+								<!-- Table body START -->
+								<tbody>
+                                    <% for (var i = 0; i<rows.length; i++) {
+                                        var sName = rows[i].sName;
+                                        var sCode = rows[i].sCode;
+										var sPhone = rows[i].sPhone;
+                                    %>
+									<!-- Table item -->
+									<tr>
+										<td><div class="d-flex align-items-center position-relative"><%= sCode%></div></td>
+										<!-- Table data -->
+										<td>
+											<div class="d-flex align-items-center position-relative">
+												<!-- Image -->
+												<div class="avatar avatar-md mb-2 mb-md-0">
+													<img src="assets/images/avatar/01.jpg" class="rounded" alt="">
+												</div>
+												<div class="mb-0 ms-2">
+													<!-- Title -->
+													<h6 class="mb-0"><a href="#" class="stretched-link"><%= sName %></a></h6>
+												</div>
+											</div>
+										</td>
+
+										<!-- Table data -->
+										<td class="text-center text-sm-start">
+											<div class=" overflow-hidden">
+												<h6 class="mb-0">85%</h6>
+												<div class="progress progress-sm bg-primary bg-opacity-10">
+													<div class="progress-bar bg-primary aos" role="progressbar" data-aos="slide-right" data-aos-delay="200" data-aos-duration="1000" data-aos-easing="ease-in-out" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+													</div>
+												</div>
+											</div>
+										</td>
+										<td> <div class="d-flex align-items-center position-relative"><%= sPhone %></div></td>
+
+										<!-- Table data -->
+										<td>
+											<a href="#" class="btn btn-success-soft btn-round me-1 mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Message"><i class="far fa-envelope"></i></a>
+										</td>
+									</tr>
+                                    <% } %>
+								</tbody>
+								<!-- Table body END -->
+							</table>
+						</div>
+						<!-- Student list table END -->
+
+						<!-- Pagination START -->
+						<div class="d-sm-flex justify-content-sm-between align-items-sm-center mt-4 mt-sm-3">
+							
+							<!-- Pagination -->
+							<nav class="d-flex justify-content-center mb-0" aria-label="navigation" style="text-align: center;">
+								<ul class="pagination pagination-sm pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
+									<li class="page-item mb-0 "><a class="page-link" href="#" tabindex="-1"><i class="fas fa-angle-left"></i></a></li>
+									<li class="page-item mb-0 active"><a class="page-link" href="#">1</a></li>
+									<li class="page-item mb-0"><a class="page-link" href="#"><i class="fas fa-angle-right"></i></a></li>
+								</ul>
+							</nav>
+						</div>
+						<!-- Pagination END -->
+					</div>
+					<!-- Card body START -->
+				</div>
+				<!-- Card END -->
+			</div>
+			<!-- Main content END -->
+		</div><!-- Row END -->
+	</div>
+</section>
+<!-- =======================
+Inner part END -->
+
+</main>
+<!-- **************** MAIN CONTENT END **************** -->
+
+<!-- Footer START -->
+<%- include('./footer-lite') %>
+<!-- Footer END -->
+
+<!-- Back to top -->
+<div class="back-top"><i class="bi bi-arrow-up-short position-absolute top-50 start-50 translate-middle"></i></div>
+
+<!-- Bootstrap JS -->
+<script src="../vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Vendors -->
+<script src="assets/vendor/choices/js/choices.min.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+
+<!-- Template Functions -->
+<script src="../js/functions.js"></script>
+
+</body>
+</html>

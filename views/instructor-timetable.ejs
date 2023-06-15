@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Aloys</title>
+
+	<!-- Meta Tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="author" content="Webestica.com">
+	<meta name="description" content="Eduport- LMS, Education and Course Theme">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="../images/icon.gif">
+
+	<!-- Google Font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap">
+
+	<!-- Plugins CSS -->
+	<link rel="stylesheet" type="text/css" href="../../assets/vendor/font-awesome/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="../../assets/vendor/bootstrap-icons/bootstrap-icons.css">
+	<link rel="stylesheet" type="text/css" href="../../assets/vendor/apexcharts/css/apexcharts.css">
+
+	<!-- Theme CSS -->
+	<link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
+
+</head>
+
+<body>
+
+<!-- Header START -->
+<%- include('./navbar') %>
+<!-- Header END -->
+
+<!-- **************** MAIN CONTENT START **************** -->
+<main>
+	
+<!-- =======================
+Page Banner START -->
+<section class="pt-0">
+	<!-- Main banner background image -->
+	<div class="container-fluid px-0">
+		<div class="bg-blue h-100px h-md-200px rounded-0" style="background:url(assets/images/pattern/04.png) no-repeat center center; background-size:cover;">
+		</div>
+	</div>
+	<div class="container mt-n4">
+		<div class="row">
+			<div class="col-12">
+				<!-- Profile banner START -->
+				<%- include('./navbar-mypage-profile') %>
+				<!-- Profile banner END -->
+
+				<!-- Advanced filter responsive toggler START -->
+				<!-- Divider -->
+				<hr class="d-xl-none">
+				<div class="col-12 col-xl-3 d-flex justify-content-between align-items-center">
+					<a class="h6 mb-0 fw-bold d-xl-none" href="#">Menu</a>
+					<button class="btn btn-primary d-xl-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+						<i class="fas fa-sliders-h"></i>
+					</button>
+				</div>
+				<!-- Advanced filter responsive toggler END -->
+			</div>
+		</div>
+	</div>
+</section>
+<!-- =======================
+Page Banner END -->
+
+<!-- =======================
+Page content START -->
+<section class="pt-0">
+	<div class="container">
+		<div class="row">
+			<!-- Left sidebar START -->
+			<%- include('./navbar-mypage') %>
+			<!-- Left sidebar END -->
+
+			<!-- Main content START -->
+			<div class="col-xl-9">
+				<!-- Course List table START -->
+				<div class="row">
+					<div class="col-12">
+						<div class="card border bg-transparent rounded-3 mt-5">
+							<!-- Card header START -->
+							<div class="card-header bg-transparent border-bottom">
+								<div class="d-sm-flex justify-content-sm-between align-items-center">
+									<h3 class="mb-2 mb-sm-0">2022학년도 1학기 시간표</h3>
+								</div>
+							</div>
+							<!-- Card body START -->
+							<div class="card-body">
+								<div class="table-responsive border-0 rounded-3">
+									<!-- Table START -->
+									<table class="table table-dark-gray align-middle p-4 mb-0">
+										<!-- Table head -->
+										<thead>
+											<tr>
+												<th scope="col" class="border-0 rounded-start"></th>
+												<th scope="col" class="border-0">월요일</th>
+												<th scope="col" class="border-0">화요일</th>
+												<th scope="col" class="border-0">수요일</th>
+                                                <th scope="col" class="border-0">목요일</th>
+												<th scope="col" class="border-0 rounded-end">금요일</th>
+											</tr>
+										</thead>
+										<!-- Table body START -->
+										<tbody>
+											<!-- Table item -->
+											<tr>
+												<!-- Course item -->
+												<td>
+                                                    <!-- Title -->
+                                                    <h6 class="mb-0 ms-2 table-responsive-title">1교시</h6>
+												</td>
+												<td><%=rows[0].Mon1%></td>
+												<td><%=rows[0].Tue1%></td>
+												<td><%=rows[0].Wed1%></td>
+												<td><%=rows[0].Thu1%></td>
+                                                <td><%=rows[0].Fri1%></td>
+											</tr>
+                                            <tr>
+												<!-- Course item -->
+												<td>
+                                                    <!-- Title -->
+                                                    <h6 class="mb-0 ms-2 table-responsive-title">2교시</h6>
+												</td>
+												<td><%=rows[0].Mon2%></td>
+												<td><%=rows[0].Tue2%></td>
+												<td><%=rows[0].Wed2%></td>
+												<td><%=rows[0].Thu2%></td>
+                                                <td><%=rows[0].Fri2%></td>
+											</tr>
+                                            <tr>
+												<!-- Course item -->
+												<td>
+                                                    <!-- Title -->
+                                                    <h6 class="mb-0 ms-2 table-responsive-title">3교시</h6>
+												</td>
+												<td><%=rows[0].Mon3%></td>
+												<td><%=rows[0].Tue3%></td>
+												<td><%=rows[0].Wed3%></td>
+												<td><%=rows[0].Thu3%></td>
+                                                <td><%=rows[0].Fri3%></td>
+											</tr>
+                                            <tr>
+												<!-- Course item -->
+												<td>
+                                                    <!-- Title -->
+                                                    <h6 class="mb-0 ms-2 table-responsive-title">4교시</h6>
+												</td>
+												<td><%=rows[0].Mon4%></td>
+												<td><%=rows[0].Tue4%></td>
+												<td><%=rows[0].Wed4%></td>
+												<td><%=rows[0].Thu4%></td>
+                                                <td><%=rows[0].Fri4%></td>
+											</tr>
+                                            <tr>
+												<!-- Course item -->
+												<td>
+                                                    <!-- Title -->
+                                                    <h6 class="mb-0 ms-2 table-responsive-title">5교시</h6>
+												</td>
+												<td><%=rows[0].Mon5%></td>
+												<td><%=rows[0].Tue5%></td>
+												<td><%=rows[0].Wed5%></td>
+												<td><%=rows[0].Thu5%></td>
+                                                <td><%=rows[0].Fri5%></td>
+											</tr>
+                                            <tr>
+												<!-- Course item -->
+												<td>
+                                                    <!-- Title -->
+                                                    <h6 class="mb-0 ms-2 table-responsive-title">6교시</h6>
+												</td>
+												<td><%=rows[0].Mon6%></td>
+												<td><%=rows[0].Tue6%></td>
+												<td><%=rows[0].Wed6%></td>
+												<td><%=rows[0].Thu6%></td>
+                                                <td><%=rows[0].Fri6%></td>
+											</tr>
+										</tbody>
+										<!-- Table body END -->
+									</table>
+									<!-- Table END -->
+								</div>
+							</div>
+							<!-- Card body START -->
+						</div>
+					</div>
+				</div>
+				<!-- Course List table END -->
+			</div>
+			<!-- Main content END -->
+		</div><!-- Row END -->
+	</div>
+</section>
+<!-- =======================
+Page content END -->
+
+</main>
+<!-- **************** MAIN CONTENT END **************** -->
+
+<!-- Footer START -->
+<%- include('./footer-lite') %>
+<!-- Footer END -->
+
+<!-- Back to top -->
+<div class="back-top"><i class="bi bi-arrow-up-short position-absolute top-50 start-50 translate-middle"></i></div>
+
+<!-- Bootstrap JS -->
+<script src="../../assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Vendors -->
+<script src="../../assets/vendor/purecounterjs/dist/purecounter_vanilla.js"></script>
+<script src="../../assets/vendor/apexcharts/js/apexcharts.min.js"></script>
+
+<!-- Template Functions -->
+<script src="../../assets/js/functions.js"></script>
+
+</body>
+</html>

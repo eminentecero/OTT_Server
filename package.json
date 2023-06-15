@@ -1,0 +1,20 @@
+{
+  "name": "re_ott_server",
+  "version": "1.0.0",
+  "description": "리팩토링",
+  "main": "index.js",
+  "scripts": {
+    "test": "run",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eminentecero/OTT_Server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eminentecero/OTT_Server/issues"
+  },
+  "homepage": "https://github.com/eminentecero/OTT_Server#readme"
+}

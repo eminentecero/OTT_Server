@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>Aloys</title>
+
+	<!-- Meta Tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="author" content="Webestica.com">
+	<meta name="description" content="Eduport- LMS, Education and Course Theme">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="../images/icon.gif">
+
+	<!-- Google Font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap">
+
+	<!-- Plugins CSS -->
+	<link rel="stylesheet" type="text/css" href="../../assets/vendor/font-awesome/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="../../assets/vendor/bootstrap-icons/bootstrap-icons.css">
+	<link rel="stylesheet" type="text/css" href="../../assets/vendor/choices/css/choices.min.css">
+
+	<!-- Theme CSS -->
+	<link rel="stylesheet" type="text/css" href="../../css/style.css">
+
+</head>
+
+<body>
+
+<!-- Header START -->
+<%- include('./navbar') %>
+<!-- Header END -->
+
+<!-- **************** MAIN CONTENT START **************** -->
+<main>
+
+<!-- =======================
+Page Banner START -->
+<section class="bg-dark align-items-center d-flex" style="background:url(../images/pattern/04.png) no-repeat center center; background-size:cover;">
+	<!-- Main banner background image -->
+	<div class="container">
+    <div class="row">
+      <div class="col-12">
+        <!-- Title -->
+        <h1 class="text-white">수업 리스트 확인</h1>
+        <!-- Breadcrumb -->
+        <div class="d-flex">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-dark breadcrumb-dots mb-0">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Courses</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+	</div>
+</section>
+<!-- =======================
+Page Banner END -->
+
+<!-- =======================
+Page content START -->
+<section class="pb-0 py-sm-5">
+	<div class="container">
+		<!-- Title and select START -->
+		<div class="row g-3 align-items-center mb-4">
+			<!-- Select option -->
+			<div class="col-md-8">
+				<div class="row g-3 align-items-center justify-content-md-end me-auto">
+					
+					<!-- List and Grid icon -->
+					<div class="col-sm-4 col-xl-6 text-md-end d-none d-md-block">
+						<ul class="list-inline mb-0">
+							<!-- Grid icon -->
+							<li class="list-inline-item"><a href="course-grid.html" class="btn btn-outline-light mb-0 me-2"><i class="fas fa-fw fa-th-large"></i></a></li>
+							<!-- list icon -->
+							<li class="list-inline-item"><a href="course-list.html" class="btn btn-outline-light mb-0 me-2"><i class="fas fa-fw fa-list-ul"></i></a></li>
+						</ul>
+					</div>
+					
+					<!-- Advanced filter responsive toggler START -->
+					<div class="col-4 d-xl-none text-md-end">
+						<button class="btn btn-primary mb-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+							<i class="fas fa-sliders-h me-1"></i> Show filter
+						</button>
+					</div>
+					<!-- Advanced filter responsive toggler END -->
+
+				</div>
+			</div>
+		</div>
+		<!-- Title and select END -->
+
+		<div class="row">
+			<!-- Main content START -->
+			<div class="col-xl-9 col-xxl-8">
+				<div style="text-align:center;">
+					<h3> 조회 가능한 수업이 없습니다. 강의를 등록해주세요.</h3>
+					<h3><br> </h3>
+					<a class="btn btn-success my-0" href="/courses-create/detail">강의 등록하기</a>
+				</div>
+				
+				<!-- Pagination START -->
+				<div class="col-12">
+					<nav class="mt-4 d-flex justify-content-center" aria-label="navigation">
+						<ul class="pagination pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
+							<li class="page-item mb-0"><a class="page-link" href="#" tabindex="-1"><i class="fas fa-angle-double-left"></i></a></li>
+							<li class="page-item mb-0 active"><a class="page-link" href="#">1</a></li>
+							<li class="page-item mb-0"><a class="page-link" href="#"><i class="fas fa-angle-double-right"></i></a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- Pagination END -->
+			</div>
+			<!-- Main content END -->
+
+			<!-- Right sidebar START -->
+			<div class="col-lg-3 col-xxl-4">
+				<!-- Responsive offcanvas body START -->
+				<nav class="navbar navbar-light navbar-expand-xl mx-0">
+					<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+						<div class="offcanvas-header bg-light">
+							<h5 class="offcanvas-title" id="offcanvasNavbarLabel">Advance Filter</h5>
+							<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+						</div>
+						<div class="offcanvas-body p-3 p-xl-0">
+							<form>
+								<!-- Category START -->
+								<div class="card card-body shadow p-4 mb-4">
+									<!-- Title -->
+									<h4 class="mb-4">Category</h4>
+										<div class="row">
+											<!-- Category group -->
+											<div class="col-xxl-6">
+												<!-- Checkbox -->
+												<div class="form-check">
+													<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault9">
+													<label class="form-check-label" for="flexCheckDefault9">All</label>
+												</div>
+												<!-- Checkbox -->
+												<div class="form-check">
+													<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault10">
+													<label class="form-check-label" for="flexCheckDefault10">Development</label>
+												</div>
+												<!-- Checkbox -->
+												<div class="form-check">
+													<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault11">
+													<label class="form-check-label" for="flexCheckDefault11">Design</label>
+												</div>
+												<!-- Checkbox -->
+												<div class="form-check">
+													<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault12">
+													<label class="form-check-label" for="flexCheckDefault12">Accounting</label>
+												</div>
+												<!-- Checkbox -->
+												<div class="form-check">
+													<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault17">
+													<label class="form-check-label" for="flexCheckDefault17">Translation</label>
+												</div>
+											</div>
+		
+											<!-- Category group -->
+											<div class="col-xxl-6">
+												<!-- Checkbox -->
+												<div class="form-check">
+													<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault13">
+													<label class="form-check-label" for="flexCheckDefault13">Finance</label>
+												</div>
+												<!-- Checkbox -->
+												<div class="form-check">
+													<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault14">
+													<label class="form-check-label" for="flexCheckDefault14">Legal</label>
+												</div>
+												<!-- Checkbox -->
+												<div class="form-check">
+													<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault15">
+													<label class="form-check-label" for="flexCheckDefault15">Photography</label>
+												</div>
+												<!-- Checkbox -->
+												<div class="form-check">
+													<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault16">
+													<label class="form-check-label" for="flexCheckDefault16">Writing</label>
+												</div>
+												<!-- Checkbox -->
+												<div class="form-check">
+													<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault18">
+													<label class="form-check-label" for="flexCheckDefault18">Marketing</label>
+												</div>
+											</div>
+										</div><!-- Row END -->
+								</div>
+								<!-- Category END -->
+		
+								<!-- Price START -->
+								<div class="card card-body shadow p-4 mb-4">
+									<!-- Title -->
+									<h4 class="mb-3">Price Level</h4>
+									<ul class="list-inline mb-0">
+										<!-- Price item -->
+										<li class="list-inline-item">
+											<input type="radio" class="btn-check" name="options" id="option1">
+											<label class="btn btn-light btn-primary-soft-check" for="option1">All</label>
+										</li>
+										<!-- Price item -->
+										<li class="list-inline-item">
+											<input type="radio" class="btn-check" name="options" id="option2">
+											<label class="btn btn-light btn-primary-soft-check" for="option2">Free</label>
+										</li>
+										<!-- Price item -->
+										<li class="list-inline-item">
+											<input type="radio" class="btn-check" name="options" id="option3">
+											<label class="btn btn-light btn-primary-soft-check" for="option3">Paid</label>
+										</li>
+									</ul>
+								</div>
+								<!-- Price END -->
+		
+								<!-- Skill level START -->
+								<div class="card card-body shadow p-4 mb-4">
+									<!-- Title -->
+									<h4 class="mb-3">Skill level</h4>
+									<ul class="list-inline mb-0">
+										<!-- Item -->
+										<li class="list-inline-item mb-2">
+											<input type="checkbox" class="btn-check" id="btn-check-12">
+											<label class="btn btn-light btn-primary-soft-check" for="btn-check-12">All levels</label>
+										</li>
+										<!-- Item -->
+										<li class="list-inline-item mb-2">
+											<input type="checkbox" class="btn-check" id="btn-check-9">
+											<label class="btn btn-light btn-primary-soft-check" for="btn-check-9">Beginner</label>
+										</li>
+										<!-- Item -->
+										<li class="list-inline-item mb-2">
+											<input type="checkbox" class="btn-check" id="btn-check-10">
+											<label class="btn btn-light btn-primary-soft-check" for="btn-check-10">Intermediate</label>
+										</li>
+										<!-- Item -->
+										<li class="list-inline-item mb-2">
+											<input type="checkbox" class="btn-check" id="btn-check-11">
+											<label class="btn btn-light btn-primary-soft-check" for="btn-check-11">Advanced</label>
+										</li>
+									</ul>
+								</div>
+								<!-- Skill level END -->
+		
+								<!-- Language START -->
+								<div class="card card-body shadow p-4 mb-4">
+									<!-- Title -->
+									<h4 class="mb-3">Language</h4>
+									<ul class="list-inline mb-0 g-3">
+										<!-- Item -->
+										<li class="list-inline-item mb-2">
+											<input type="checkbox" class="btn-check" id="btn-check-2">
+											<label class="btn btn-light btn-primary-soft-check" for="btn-check-2">English</label>
+										</li>
+										<!-- Item -->
+										<li class="list-inline-item mb-2">
+											<input type="checkbox" class="btn-check" id="btn-check-3">
+											<label class="btn btn-light btn-primary-soft-check" for="btn-check-3">Francas</label>
+										</li>
+										<!-- Item -->
+										<li class="list-inline-item mb-2">
+											<input type="checkbox" class="btn-check" id="btn-check-4">
+											<label class="btn btn-light btn-primary-soft-check" for="btn-check-4">Hindi</label>
+										</li>
+										<!-- Item -->
+										<li class="list-inline-item mb-2">
+											<input type="checkbox" class="btn-check" id="btn-check-5">
+											<label class="btn btn-light btn-primary-soft-check" for="btn-check-5">Russian</label>
+										</li>
+										<!-- Item -->
+										<li class="list-inline-item mb-2">
+											<input type="checkbox" class="btn-check" id="btn-check-6">
+											<label class="btn btn-light btn-primary-soft-check" for="btn-check-6">Spanish</label>
+										</li>
+										<!-- Item -->
+										<li class="list-inline-item mb-2">
+											<input type="checkbox" class="btn-check" id="btn-check-7">
+											<label class="btn btn-light btn-primary-soft-check" for="btn-check-7">Bengali</label>
+										</li>
+										<!-- Item -->
+										<li class="list-inline-item mb-2">
+											<input type="checkbox" class="btn-check" id="btn-check-8">
+											<label class="btn btn-light btn-primary-soft-check" for="btn-check-8">Portuguese</label>
+										</li>
+									</ul>
+								</div>
+								<!-- Language END -->
+							</form><!-- Form End -->
+						</div>
+
+						<!-- Button -->
+						<div class="d-grid p-2 p-xl-0 bg-body text-center">
+							<button class="btn btn-primary mb-0">Filter Results</button>
+						</div>
+					</div>
+				</nav>
+				<!-- Responsive offcanvas body END -->
+			</div>
+			<!-- Right sidebar END -->
+
+		</div><!-- Row END -->
+	</div>
+</section>
+<!-- =======================
+Page content END -->
+
+<!-- =======================
+Newsletter START -->
+<section class="pt-5 pt-lg-0">
+	<div class="container position-relative overflow-hidden">
+		<!-- SVG decoration -->
+		<figure class="position-absolute top-50 start-50 translate-middle ms-3">
+			<svg>
+				<path class="fill-white opacity-3" d="m496 22.999c0 10.493-8.506 18.999-18.999 18.999s-19-8.506-19-18.999 8.507-18.999 19-18.999 18.999 8.506 18.999 18.999z"/>
+				<path class="fill-white opacity-3" d="m775 102.5c0 5.799-4.701 10.5-10.5 10.5-5.798 0-10.499-4.701-10.499-10.5 0-5.798 4.701-10.499 10.499-10.499 5.799 0 10.5 4.701 10.5 10.499z"/>
+				<path class="fill-white opacity-3" d="m192 102c0 6.626-5.373 11.999-12 11.999s-11.999-5.373-11.999-11.999c0-6.628 5.372-12 11.999-12s12 5.372 12 12z"/>
+				<path class="fill-white opacity-3" d="m20.499 10.25c0 5.66-4.589 10.249-10.25 10.249-5.66 0-10.249-4.589-10.249-10.249-0-5.661 4.589-10.25 10.249-10.25 5.661-0 10.25 4.589 10.25 10.25z"/>
+			</svg>
+		</figure>
+		<!-- Svg decoration -->
+		<figure class="position-absolute bottom-0 end-0 mb-5 d-none d-sm-block">
+			<svg class="rotate-130" width="258.7px" height="86.9px" viewBox="0 0 258.7 86.9">
+				<path stroke="white" fill="none" stroke-width="2" d="M0,7.2c16,0,16,25.5,31.9,25.5c16,0,16-25.5,31.9-25.5c16,0,16,25.5,31.9,25.5c16,0,16-25.5,31.9-25.5 c16,0,16,25.5,31.9,25.5c16,0,16-25.5,31.9-25.5c16,0,16,25.5,31.9,25.5s16-25.5,31.9-25.5"/>
+				<path stroke="white" fill="none" stroke-width="2" d="M0,57c16,0,16,25.5,31.9,25.5c16,0,16-25.5,31.9-25.5c16,0,16,25.5,31.9,25.5c16,0,16-25.5,31.9-25.5 c16,0,16,25.5,31.9,25.5c16,0,16-25.5,31.9-25.5c16,0,16,25.5,31.9,25.5s16-25.5,31.9-25.5"/>
+			</svg>
+		</figure>
+		
+	</div>
+</section>
+<!-- =======================
+Newsletter END -->
+
+</main>
+<!-- **************** MAIN CONTENT END **************** -->
+
+<!-- Footer START -->
+<%- include('./footer-lite') %>
+<!-- Footer END -->
+
+<!-- Back to top -->
+<div class="back-top"><i class="bi bi-arrow-up-short position-absolute top-50 start-50 translate-middle"></i></div>
+
+<!-- Bootstrap JS -->
+<script src="../../assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Vendors -->
+<script src="../../assets/vendor/choices/js/choices.min.js"></script>
+
+<!-- Template Functions -->
+<script src="../../assets/js/functions.js"></script>
+
+</body>
+</html>
