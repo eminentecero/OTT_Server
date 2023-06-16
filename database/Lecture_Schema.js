@@ -49,6 +49,9 @@ module.exports = class Lecture extends Sequelize.Model {
       },
       {
         sequelize,
+        timestamps: false,
+        underscored: false,
+        paranoid: false,
         modelName: "Lecture",
         tableName: "Lecture",
         charset: "utf8",
