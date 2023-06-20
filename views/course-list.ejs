@@ -36,7 +36,7 @@
 <!--게시물 관련 변수 선언-->
 <%
 	var rows = rowsBefore.reverse();
-	var cnt = rows[0].cnt;
+	var cnt = rows.cnt;
 %>
 <!-- **************** MAIN CONTENT START **************** -->
 <main>
@@ -115,18 +115,14 @@ Page content START -->
 			<div class="col-xl-9 col-xxl-8">
 				<%
 				for(let i = 0; i<cnt; i++) {
-					let lCode = rows[i].lCode;
-					let lName = rows[i].lName;
-					let lContent = rows[i].lContent;
-					let lSubName = rows[i].lSubName;
-					let lSubCode = rows[i].lSubCode;
-					let lURL = rows[i].lURL;
-					let lDate = rows[i].lDate;
-					let lHour = rows[i].lHour;
-					let lStartTime = rows[i].lStartTime;
-					let lEndTime = rows[i].lEndTime;
-					let classCode = rows[i].classCode;
-					let lProgress = rows[i].lProgress;
+					let lCode = rows[i].Code;
+					let lName = rows[i].title;
+					let lContent = rows[i].content;
+					let lSubName = rows[i].subject;
+					let lURL = rows[i].video;
+					let lDate = rows[i].date;
+					let lHour = rows[i].time;
+					let classCode = rows[i].class;
 				%>
 				<script>
 					const $preview = document.querySelector('#preview');

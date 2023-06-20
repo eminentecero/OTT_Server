@@ -68,7 +68,7 @@ Steps START -->
 		<div class="card-body">
 			<!-- Step content START -->
 			<div class="bs-stepper-content">
-				<form name='upload' method='post' action='/courses-create/detail'>
+				<form name='upload' method='post' action='/courses/create'>
 					<!-- Step 1 content START -->
 					<div class="content">
 						<!-- Title -->
@@ -79,7 +79,7 @@ Steps START -->
 						<!-- Basic information START -->
 						<div class="row g-4">
 							<!-- Course title -->
-							<input name = "tCode" class="form-control" value="<%=currentUser[0].tCode %>" hidden>
+							<input name = "tCode" class="form-control" value="<%=currentUser.T_code %>" hidden>
 
 							<div class="col-12">
 								<label class="form-label">강의명</label>
@@ -91,12 +91,12 @@ Steps START -->
 								<label class="form-label">과목명</label>
 								<select name = "lSubject" class="form-select js-choice border-0 z-index-9 bg-transparent" aria-label=".form-select-sm" data-search-enabled="true" required>
 									<option value="">Select Subject Category</option>
-									<option value="01">국어</option>
-									<option value="02">수학</option>
-									<option value="03">영어</option>
-									<option value="04">사회</option>
-									<option value="05">과학</option>
-									<option value="06">도덕</option>
+									<option value="국어">국어</option>
+									<option value="수학">수학</option>
+									<option value="영어">영어</option>
+									<option value="사회">사회</option>
+									<option value="과학">과학</option>
+									<option value="도덕">도덕</option>
 								</select>
 							</div>
 
