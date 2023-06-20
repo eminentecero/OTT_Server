@@ -6,13 +6,41 @@ const cookieParser = require("cookie-parser");
 const path = require("path");
 const session = require("express-session");
 const { sequelize } = require("./models");
+const passport = require("passport");
+const passportConfig = require("./passport");
+
+require("dotenv").config();
+
+// routes
+const mainRouter = require("./routes/main");
 
 const app = express(); // app생성
 const port = process.env.PORT;
 const router = express.Router();
+passportConfig();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(
+  session({
+    resave: false,
+    saveUninitialized: false,
+    secret: process.env.COOKIE_SECRET,
+    cookie: {
+      httpOnly: true,
+      secure: false,
+      maxAge: 1000 * 60 * 60,
+    },
+  })
+);
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use(function (req, res, next) {
+  res.locals.isAuthenticated = req.isAuthenticated();
+  res.locals.currentUser = req.user;
+  next();
+});
 
 // ==== 뷰 엔진은 ejs로 설정 ==== //
 app.set("views", __dirname + "/views");
@@ -67,7 +95,8 @@ sequelize
   });
 
 // 라우터 등록
-app.use("/", router);
+app.use("/", mainRouter);
+
 app.use((req, res, next) => {
   const error = new Error(`${req.method} ${req.url} 라우터가 없습니다`);
   error.status = 404;
