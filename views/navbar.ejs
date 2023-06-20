@@ -23,24 +23,12 @@
 
 				<!-- Nav Main menu START -->
 				<ul class="navbar-nav navbar-nav-scroll ms-0 me-auto">
-					<!-- Nav item 1 About -->
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="demoMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >About</a>
-						<ul class="dropdown-menu" aria-labelledby="demoMenu">
-							<li> <a class="dropdown-item" href="index.html">Notices</a></li>
-							<li> <a class="dropdown-item" href="index-2.html">School Schedule</a></li>
-							<li> <hr class="dropdown-divider"></li>
-							<li> <a class="dropdown-item" href="/about/board">Bulletin Board<span class="badge bg-success ms-2 smaller">New</span></a></li>
-							
-						</ul>
-					</li>
-
 					<!-- Nav item 2 Pages -->
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="pagesMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >Courses</a>
 						<ul class="dropdown-menu" aria-labelledby="pagesMenu">
 							<!-- Dropdown submenu -->
-							<li> <a class="dropdown-item" href="/course-list/<%=currentUser[0].tCode%>">Courses List</a></li>
+							<li> <a class="dropdown-item" href="/course-list/<%=currentUser.T_code%>">Courses List</a></li>
 							<li> <a class="dropdown-item" href="instructor-list.html">Q&A<span class="badge bg-success ms-2 smaller">New</span></a></li>
 							<li> <hr class="dropdown-divider"></li>
 							<li> <a class="dropdown-item" href="/courses-create/detail">Create a course</a></li>
@@ -144,8 +132,8 @@
 								<img class="avatar-img rounded-circle shadow" src="../images/avatar/00.jpg" alt="avatar">
 							</div>
 							<div>
-								<a class="h6" href="#"><%=currentUser[0].tName%></a>
-								<p class="small m-0"><%=currentUser[0].tEmail%></p>
+								<a class="h6" href="#"><%=currentUser.name%></a>
+								<p class="small m-0"><%=currentUser.email%></p>
 							</div>
 						</div>
 						<hr>
