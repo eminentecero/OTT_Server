@@ -33,11 +33,7 @@
 <%- include('./navbar') %>
 <!-- Header END -->
 
-<!--게시물 관련 변수 선언-->
-<%
-	var rows = rowsBefore.reverse();
-	var cnt = rows.cnt;
-%>
+
 <!-- **************** MAIN CONTENT START **************** -->
 <main>
 
@@ -114,15 +110,16 @@ Page content START -->
 			<!-- Main content START -->
 			<div class="col-xl-9 col-xxl-8">
 				<%
-				for(let i = 0; i<cnt; i++) {
-					let lCode = rows[i].Code;
-					let lName = rows[i].title;
-					let lContent = rows[i].content;
-					let lSubName = rows[i].subject;
-					let lURL = rows[i].video;
-					let lDate = rows[i].date;
-					let lHour = rows[i].time;
-					let classCode = rows[i].class;
+				for(let i = 0; i<rows.length; i++) {
+					const lCode = rows[i].Code;
+					const lName = rows[i].title;
+					const lContent = rows[i].content;
+					const lSubName = rows[i].subject;
+					const lURL = rows[i].video;
+					const lDate = rows[i].date;
+					const lHour = rows[i].time;
+					const classCode = rows[i].class;
+					const score = rows[i].score
 				%>
 				<script>
 					const $preview = document.querySelector('#preview');
@@ -170,8 +167,7 @@ Page content START -->
 											<a href="#" class="badge bg-primary text-white mb-2 mb-sm-0"><%=lSubName%></a>
 											<!-- Rating and wishlist -->
 											<div>
-												<span class="h6 fw-light me-3"><i class="fas fa-star text-warning me-1"></i>4.5 (평점)</span>
-												<a href="#" class="text-danger"><i class="fas fa-heart">(좋아요)/(찜)</i></a>
+												<span class="h6 fw-light me-3"><i class="fas fa-star text-warning me-1"></i><%=score%></span>
 											</div>
 										</div>
 			
@@ -191,15 +187,7 @@ Page content START -->
 											<!-- Avatar -->
 											<div class="d-flex align-items-center">
 												<p class="mb-0 ms-2"><a href="#" class="h6 fw-light"><%=currentUser.name%></a></p>
-											</div>
-											<!-- Price -->
-											<div class="mt-3 mt-sm-0">
-												<% if (lProgress == 0) {%>
-													<a href="/insert/progress" class="btn btn-dark">자세히 보기</a>
-												<% } else { %>
-													<a href="/course-detail/<%=lCode%>" class="btn btn-dark">자세히 보기</a>
-												<% } %> 
-											</div>                  
+											</div>            
 										</div>
 									</div>
 								</div>

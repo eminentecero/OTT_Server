@@ -45,9 +45,9 @@ router.get("/list", isLoggedIn, async (req, res) => {
         },
       },
     });
-    console.log(result);
+    console.log(result.count);
     if (result) {
-      res.render("../views/course-list.ejs", { rowsBefore: result });
+      res.render("../views/course-list.ejs", { rows: result });
     }
   } catch (error) {
     console.error(error);
