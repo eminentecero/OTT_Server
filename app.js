@@ -13,6 +13,7 @@ require("dotenv").config();
 
 // routes
 const mainRouter = require("./routes/main");
+const courseRouter = require("./routes/course");
 
 const app = express(); // app생성
 const port = process.env.PORT;
@@ -96,6 +97,7 @@ sequelize
 
 // 라우터 등록
 app.use("/", mainRouter);
+app.use("/courses", courseRouter);
 
 app.use((req, res, next) => {
   const error = new Error(`${req.method} ${req.url} 라우터가 없습니다`);

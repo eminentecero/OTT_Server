@@ -31,7 +31,6 @@ module.exports = class Lecture extends Sequelize.Model {
         },
         content: {
           type: Sequelize.STRING,
-          unique: true,
           allowNull: false,
         },
         video: {
@@ -40,10 +39,10 @@ module.exports = class Lecture extends Sequelize.Model {
         },
         score: {
           type: Sequelize.FLOAT,
-          allowNull: false,
+          allowNull: true,
         },
         subject: {
-          type: Sequelize.FLOAT,
+          type: Sequelize.STRING,
           allowNull: false,
         },
       },
