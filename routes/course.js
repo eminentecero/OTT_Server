@@ -8,7 +8,6 @@ const lecture = require("../database/Lecture_Schema");
 const teacher = require("../database/Teacher_Schema");
 
 router.get("/create", isLoggedIn, async (req, res) => {
-  console.log(req.user);
   res.render("../views/instructor-create-course.ejs");
 });
 
@@ -45,9 +44,10 @@ router.get("/list", isLoggedIn, async (req, res) => {
         },
       },
     });
-    console.log(result.count);
     if (result) {
       res.render("../views/course-list.ejs", { rows: result });
+    } else {
+      res.render("../views/course-not-list.ejs");
     }
   } catch (error) {
     console.error(error);

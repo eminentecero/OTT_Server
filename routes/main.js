@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const { isLoggedIn, isNotLoggedIn } = require("./middleware");
 const passport = require("passport");
+const timetable = require("../database/TimeTable_Schema");
+const School = require("../database/School_Schema");
 
 // 메인 페이지
 // 로그인 안 되어 있을 경우 자동으로 로그인 페이지 렌더
@@ -31,5 +33,20 @@ router.post("/login", isNotLoggedIn, async (req, res, next) => {
       return res.redirect("/");
     });
   })(req, res, next);
+});
+
+router.get("/timetable", async (req, res) => {
+  try {
+    console.log(req.user);
+    const result = await timetable.findOne({
+      where: { Class: req.user.class, School_Code: req.user.School_Code },
+    });
+    if (result) {
+      console.log(result);
+      res.render("instructor-timetable.ejs", { rows: result });
+    }
+  } catch (error) {
+    console.error(error);
+  }
 });
 module.exports = router;

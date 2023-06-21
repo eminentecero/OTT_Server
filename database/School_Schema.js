@@ -36,5 +36,9 @@ module.exports = class School extends Sequelize.Model {
       foreignKey: "School_Code",
       sourceKey: "School_Code",
     });
+    db.School.hasMany(db.TimeTable, {
+      foreignKey: "School_Code",
+      sourceKey: "School_Code",
+    });
   }
 };
