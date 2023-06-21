@@ -5,12 +5,12 @@ const Teacher = require("../database/Teacher_Schema");
 module.exports = () => {
   passport.serializeUser((user, done) => {
     console.log("serializeUser");
-    done(null, user.id);
+    done(null, user.email);
   });
 
   passport.deserializeUser((email, done) => {
     Teacher.findOne({
-      email: email,
+      where: { email },
     }).then((user) => {
       if (user) {
         done(null, user);
