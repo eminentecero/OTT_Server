@@ -42,7 +42,7 @@ Main Banner START -->
 <section class="pt-0">
 	<!-- Main banner background image -->
 	<div class="container-fluid px-0">
-		<div class="bg-blue h-100px h-md-200px rounded-0" style="background:url(assets/images/pattern/04.png) no-repeat center center; background-size:cover;">
+		<div class="bg-blue h-100px h-md-200px rounded-0">
 		</div>
 	</div>
 	<div class="container mt-n4">
@@ -98,7 +98,6 @@ Inner part START -->
 										<th scope="col" class="border-0 rounded-start">학번</th>
 										<th scope="col" class="border-0 rounded-start">이름</th>
 										<th scope="col" class="border-0">진행도</th>
-										<th scope="col" class="border-0">휴대폰 번호</th>
 										<th scope="col" class="border-0 rounded-end">수정</th>
 									</tr>
 								</thead>
@@ -106,9 +105,8 @@ Inner part START -->
 								<!-- Table body START -->
 								<tbody>
                                     <% for (var i = 0; i<rows.length; i++) {
-                                        var sName = rows[i].sName;
-                                        var sCode = rows[i].sCode;
-										var sPhone = rows[i].sPhone;
+                                        var sName = rows[i].name;
+                                        var sCode = rows[i].number;
                                     %>
 									<!-- Table item -->
 									<tr>
@@ -137,7 +135,6 @@ Inner part START -->
 												</div>
 											</div>
 										</td>
-										<td> <div class="d-flex align-items-center position-relative"><%= sPhone %></div></td>
 
 										<!-- Table data -->
 										<td>
@@ -193,8 +190,6 @@ Inner part END -->
 <script src="assets/vendor/choices/js/choices.min.js"></script>
 <script src="assets/vendor/aos/aos.js"></script>
 
-<!-- Template Functions -->
-<script src="../js/functions.js"></script>
 
 </body>
 </html>

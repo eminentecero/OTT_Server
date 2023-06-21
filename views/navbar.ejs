@@ -4,7 +4,7 @@
 	<nav class="navbar navbar-expand-xl">
 		<div class="container">
 			<!-- Logo START -->
-			<a class="navbar-brand" href="/web/success_login">
+			<a class="navbar-brand" href="/">
 				<img class="light-mode-item navbar-brand-item" src="../images/eduLogo.png" alt="logo" style='width:196.33px; height:55.61px;'>
 			</a>
 			<!-- Logo END -->
@@ -41,7 +41,7 @@
 						<ul class="dropdown-menu" aria-labelledby="accounntMenu">
 							<!-- Dropdown submenu -->
 							<li class="dropdown-submenu dropend">
-								<li> <a class="dropdown-item" href="/instructor/studentlist"><i class="fas fa-user-graduate fa-fw me-1"></i>Students</a> </li>
+								<li> <a class="dropdown-item" href="/mypage/studentlist"><i class="fas fa-user-graduate fa-fw me-1"></i>Students</a> </li>
 								<li> <a class="dropdown-item" href="/instructor/create-timetable"><i class="bi bi-grid-fill fa-fw me-1"></i>TimeTable</a> </li>
 							</li>
 
@@ -72,7 +72,7 @@
 								<img class="avatar-img rounded-circle shadow" src="../images/avatar/00.jpg" alt="avatar">
 							</div>
 							<div>
-								<a class="h6" href="#"><%=currentUser.name%></a>
+								<a class="h6" href="/mypage/timetable"><%=currentUser.name%></a>
 								<p class="small m-0"><%=currentUser.email%></p>
 							</div>
 						</div>
