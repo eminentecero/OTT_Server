@@ -39,12 +39,43 @@ router.get("/timetable/week", async (req, res) => {
   // Monday 날짜 데이터 바탕으로 Sunday 날짜 계산
   const Sunday = new Date(setMonday.setDate(setMonday.getDate() + 6));
 
+  // 해당 날짜 사이에 존재하는 수업 조회
+  // 1. 날짜별로 정렬 후, 2. 날짜 내에서 교시에 따라 정렬
   const result = await lecture.findAll({
     where: {
       T_code: req.body.T_code,
       class: req.body.class,
       date: { [Op.between]: [Monday, Sunday] },
     },
+    order: [
+      ["date", "asc"],
+      ["time", "asc"],
+    ],
+  });
+  const LectureList = result.map((v) => ({
+    lecture: v.dataValues,
+  }));
+
+  res.json({
+    classCode: req.body.class,
+    rows: LectureList,
+  });
+});
+
+// 해당 주차 시간표 조회 api
+router.get("/timetable/today", async (req, res) => {
+  const date = new Date();
+  const year = date.getFullYear();
+  const month =
+    date.getMonth() + 1 < 10 ? `0${date.getMonth() + 1}` : date.getMonth() + 1;
+  const day = date.getDate();
+  const result = await lecture.findAll({
+    where: {
+      T_code: req.body.T_code,
+      class: req.body.class,
+      date: `${year}-${month}-${day}`,
+    },
+    order: [["time", "asc"]],
   });
   const LectureList = result.map((v) => ({
     lecture: v.dataValues,
