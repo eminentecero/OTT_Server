@@ -35,26 +35,6 @@ router.post("/login", isNotLoggedIn, async (req, res, next) => {
   })(req, res, next);
 });
 
-// TODO: res: json 형식으로 보내주기
-router.post("/app/login", isNotLoggedIn, async (req, res, next) => {
-  try {
-    const user = await student.findOne({
-      where: {
-        School_Code: req.body.sSchool,
-        name: req.body.sName,
-        class: req.body.sClass,
-      },
-    });
-    if (user) {
-      res.send(user);
-    } else {
-      console.log("존재하지 않습니다.");
-    }
-  } catch (error) {
-    console.log(error);
-  }
-});
-
 router.get("/timetable", async (req, res) => {
   try {
     const result = await timetable.findOne({
