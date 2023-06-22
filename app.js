@@ -16,6 +16,7 @@ const mainRouter = require("./routes/main");
 const courseRouter = require("./routes/course");
 const instrucRouter = require("./routes/instructor");
 const mypageRouter = require("./routes/mypage");
+const appRouter = require("./routes/application");
 
 const app = express(); // app생성
 const port = process.env.PORT;
@@ -104,6 +105,7 @@ app.use("/", mainRouter);
 app.use("/courses", courseRouter);
 app.use("/instructor", instrucRouter);
 app.use("/mypage", mypageRouter);
+app.use("/app", appRouter);
 
 app.use((req, res, next) => {
   const error = new Error(`${req.method} ${req.url} 라우터가 없습니다`);
