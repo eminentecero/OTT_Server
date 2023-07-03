@@ -14,3 +14,7 @@ OTT 서버 리팩토링 프로젝트
 - 생성된 이슈 번호로 브랜치 따서 작업
 - 브랜치명 예시 : feat/#2
 - pull request
+  
+## Cloud Service 연결 방법
+
+- 참고 링크: https://cloud.google.com/appengine/docs/flexible/nodejs/using-cloud-storage?hl=ko
