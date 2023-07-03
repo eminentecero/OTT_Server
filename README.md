@@ -16,5 +16,8 @@ OTT 서버 리팩토링 프로젝트
 - pull request
   
 ## Cloud Service 연결 방법
-
+1. https://cloud.google.com/sdk/docs/install?hl=ko 로 Google Cloud SDK 설치
+2. 설치한 SDK 실행해서 로그인
+3. Storage를 사용하는 프로젝트로 선택
+4. gcloud auth application-default login 입력해서 또 로그인 실행
 - 참고 링크: https://cloud.google.com/appengine/docs/flexible/nodejs/using-cloud-storage?hl=ko
