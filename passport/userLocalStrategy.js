@@ -17,8 +17,6 @@ module.exports = () => {
             where: { email },
           });
           if (user) {
-            console.log(user.password);
-            console.log(password);
             if (user.password === password) {
               done(null, user);
             } else {

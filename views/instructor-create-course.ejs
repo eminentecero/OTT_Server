@@ -68,7 +68,7 @@ Steps START -->
 		<div class="card-body">
 			<!-- Step content START -->
 			<div class="bs-stepper-content">
-				<form name='upload' method='post' action='/courses/create'>
+				<form name='upload' method='post' action='/courses/create' enctype="multipart/form-data">
 					<!-- Step 1 content START -->
 					<div class="content">
 						<!-- Title -->
@@ -157,6 +157,31 @@ Steps START -->
 							</div>
 							
 
+							<!-- Upload video -->
+							<div class="content">
+								<!-- Title -->
+								<div class="row">
+									<!-- Upload video START -->
+									<div class="col-12">
+										<!-- Input -->
+										<div class="col-12">
+											<label class="form-label">강의 영상을 업로드 하세요.</label>
+											<div class="input-group mb-3">
+												<input type="file" class="form-control"  name = "file" id="file" accept="video/mp4" multiple>
+												<label class="input-group-text">.mp4</label>
+											</div>
+											
+										</div>
+										<div class="position-relative my-4">
+											<p class="small position-absolute top-50 start-50 translate-middle bg-body px-3 mb-0">영상 형식은 .mp4만 가능합니다.</p>
+										</div>
+									</div>
+									<!-- Upload video END -->
+	
+						
+								</div>
+							
+								
 							<!-- Course description -->
 							<div class="col-12">
 								<label class="form-label">강의 내용</label>
@@ -201,13 +226,11 @@ Steps START -->
 
 						</div>
 						<!-- Basic information START -->
-						
+							
 						<div class="d-flex justify-content-between mt-3">
 							<button type="submit" value = "upload" class="btn btn-success mb-2 mb-sm-0">다음 단계</button>
 						</div>
-							
-					<!-- Step 1 content END -->
-					
+						<!-- Step 1 content END -->					
 				</form>
 			</div>
 		</div>
