@@ -48,8 +48,4 @@ router.get("/timetable", async (req, res) => {
   }
 });
 
-router.get("/studentList", async (req, res) => {
-  res.render("instructor-studentlist.ejs", { rows: [] });
-});
-
 module.exports = router;
