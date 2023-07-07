@@ -42,7 +42,7 @@ router.post("/create", isLoggedIn, multer.single("file"), async (req, res) => {
       );
       try {
         const result = await lecture.create({
-          Code: `${req.user.School_Code}${req.user.T_code}${req.body.lDate}${req.body.lecTime}`,
+          Code: `${req.user.School_Code}${req.user.T_code}${req.body.lDate}${req.body.lHour}`,
           class: parseInt(`${req.body.lGrade}${req.body.lClass}`),
           T_name: req.user.name,
           time: req.body.lHour,

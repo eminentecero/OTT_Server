@@ -35,6 +35,15 @@ router.post("/login", isNotLoggedIn, async (req, res, next) => {
   })(req, res, next);
 });
 
+router.get("/logout", isLoggedIn, async (req, res, next) => {
+  req.logout((err) => {
+    if (err) {
+      return next(err);
+    }
+  });
+  res.redirect("/");
+});
+
 router.get("/timetable", async (req, res) => {
   try {
     const result = await timetable.findOne({
